@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+</head>
+<body>
+{% for column in book %}
+    <p>Book Name: {{ column.title }}</p>
+    <p>Current Rating: {{ column.rating }}</p>
+    <form action="{{ url_for("edit", sid=column.id) }}" method="post">
+        <input type="text" placeholder="New Rating" name="nrating">
+        <input type="submit" value="Change Rating" name="new_rating">
+    </form>
+{% endfor %}
+
+</body>
+</html>
